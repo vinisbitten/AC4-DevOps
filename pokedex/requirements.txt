@@ -1,0 +1,5 @@
+flask
+requests
+jinja2
+redis
+beautifulsoup4

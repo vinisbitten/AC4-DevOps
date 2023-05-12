@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+  web:
+    build: ./pokedex/app
+    stop_signal: SIGINT
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redis
+    volumes:
+      - ./pokedex/app:/app
+networks:
+  pokedex-network: {}
