@@ -9,7 +9,7 @@ class appTest(unittest.TestCase):
 
     def test_response_ok(self):
         response = self.app.get('/pokemon/pikachu')
-        self.assertEqual(response.status_code, 200), "Status code is not 200"
+        self.assertEqual(response.status_code, 200)
 
     def test_pikachu_right_information(self):
         response = self.app.get('/pokemon/pikachu')
@@ -24,6 +24,10 @@ class appTest(unittest.TestCase):
         soup = BeautifulSoup(response.text, 'html.parser')
         # The counter is the penultimate word of the text
         self.assertGreater(int(soup.find(id='counter').text.split(' ')[-2]), 0)
+
+    def test_pokemon_not_found(self):
+        response = self.app.get('/pokemon/donotexist')
+        self.assertEqual(response.status_code, 404)
 
     def close(self):
         self.app.close()
