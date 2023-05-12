@@ -13,5 +13,5 @@ ver:
 unit-tests:
   stage: tests
   script:
-    - pip install -r requirements.txt
+    - pip install -r pokedex/requirements.txt
     - python -m unittest discover -s pokedex/app/pokedex-test.py -p '*_test.py'
