@@ -2,7 +2,7 @@ image: python:alpine-3.9
 
 stages:
   - ver
-  - tests
+  - unit-tests
 
 ver:
   stage: ver
