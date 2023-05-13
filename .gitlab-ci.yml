@@ -2,7 +2,7 @@ image: python:alpine-3.9
 
 stages:
   - ver
-  - unit-tests
+  - tests
 
 ver:
   stage: ver
@@ -10,8 +10,8 @@ ver:
     - python --version
     - whoami
 
-unit-tests:
-  stage: unit-tests
+tests:
+  stage: tests
   script:
     - pip install -r pokedex/requirements.txt
     - python -m unittest discover -s pokedex/app/pokedex-test.py -p '*_test.py'
