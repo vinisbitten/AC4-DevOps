@@ -14,5 +14,6 @@ services:
       - redis
     volumes:
       - ./pokedex/app:/app
+
 networks:
   pokedex-network: {}

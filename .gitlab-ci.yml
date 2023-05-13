@@ -11,7 +11,7 @@ ver:
     - whoami
 
 unit-tests:
-  stage: tests
+  stage: unit-tests
   script:
     - pip install -r pokedex/requirements.txt
     - python -m unittest discover -s pokedex/app/pokedex-test.py -p '*_test.py'
